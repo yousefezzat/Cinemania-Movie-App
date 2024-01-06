@@ -18,7 +18,7 @@
 - [x] Localization (For static only)
 - [] File Structure
 - [ ] environments
-- [ ] environment (url path in HTML)
+- [x] environment (url path in HTML)
 - [x] Modify the Login and register pages
 - [x] Modify the cards apperance
 - [x] Fix scrolldown navbar background
