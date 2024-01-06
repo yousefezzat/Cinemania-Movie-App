@@ -7,7 +7,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { MovieDetailsComponent } from './Components/movie-details/movie-details.component';
 import { CatalogComponent } from './Components/catalog/catalog.component';
 import { RegisterComponent } from './Components/register/register.component';
-import { AuthGuard } from './Guards/auth.guard'; // Replace 'auth.guard' with the actual guard file name
+import { AuthGuard } from './Guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,6 +23,10 @@ const routes: Routes = [
   { path: 'Login', component: LoginComponent },
   { path: 'Register', component: RegisterComponent },
   { path: '**', redirectTo: '' },
+
+
+
+
 ];
 
 @NgModule({
