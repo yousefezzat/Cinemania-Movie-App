@@ -17,13 +17,14 @@
 
 - [x] Localization (For static only)
 - [] File Structure
-- [ ] environments
+- [x] environments (not sure)
 - [x] environment (url path in HTML)
 - [x] Modify the Login and register pages
 - [x] Modify the cards apperance
 - [x] Fix scrolldown navbar background
 - [ ] Modify Ui
 - [ ] Pagination
+- [ ] Remove Comments
 
 
 

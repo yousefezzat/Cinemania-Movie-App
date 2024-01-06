@@ -10,6 +10,7 @@ import { TopRatedMoviesResponseInterface } from '../../../Models/top-rated-movie
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit, AfterViewInit {
+  // baseMoviesUrl = environment.baseMoviesUrl;
   baseUrl = environment.baseUrl;
   imgUrl = environment.baseImgUrl;
   // apiKey = environment.apiKey;
@@ -28,7 +29,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
     this.getTopRatedMovies();
   }
   getTopRatedMovies() {
-    this.movieService.getTopRatedMovies().subscribe((movies) => {
+    this.movieService.getMovies().subscribe((movies) => {
       this.receivedTopRatedMovies = movies.results;
       // console.log(movies)
       // console.log(this.receivedTopRatedMovies);

@@ -11,15 +11,15 @@ import { TopRatedMoviesResponseInterface } from '../../Models/top-rated-movies-r
 export class MovieService {
 
   constructor(private httpClient: HttpClient) { }
-
+  baseMoviesUrl = environment.baseMoviesUrl;
   baseUrl = environment.baseUrl;
   apiKey = environment.apiKey;
 
   // Get top-rated movies
-  getTopRatedMovies(): Observable<TopRatedMoviesResponseInterface> {
-      const url = `${this.baseUrl}/movie/top_rated?api_key=${this.apiKey}`;
-      return this.httpClient.get<TopRatedMoviesResponseInterface>(url);
-    
+  getMovies(): Observable<TopRatedMoviesResponseInterface> {
+    const url = `${this.baseMoviesUrl}${this.apiKey}`;
+    return this.httpClient.get<TopRatedMoviesResponseInterface>(url);
+
   }
 
   /* // Get popular movies

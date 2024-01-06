@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./catalog.component.css'],
 })
 export class CatalogComponent implements OnInit {
-  baseUrl = environment.baseUrl;
+  // baseMoviesUrl = environment.baseMoviesUrl;
   imgUrl = environment.baseImgUrl;
   receivedTopRatedMovies: MovieInterface[] = [];
   showMore: boolean[] = [];
@@ -24,7 +24,7 @@ export class CatalogComponent implements OnInit {
 
   }
   getTopRatedMovies() {
-    this.movieService.getTopRatedMovies().subscribe((movies) => {
+    this.movieService.getMovies().subscribe((movies) => {
       this.receivedTopRatedMovies = movies.results;
       this.showMore = new Array<boolean>(this.receivedTopRatedMovies.length).fill(false);
 
