@@ -11,6 +11,7 @@ import { TopRatedMoviesResponseInterface } from '../../../Models/top-rated-movie
 })
 export class LandingComponent implements OnInit, AfterViewInit {
   baseUrl = environment.baseUrl;
+  imgUrl = environment.baseImgUrl;
   // apiKey = environment.apiKey;
 
 

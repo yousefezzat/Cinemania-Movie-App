@@ -3,8 +3,7 @@
   <div class="row row-cols-2 row-cols-md-4 g-4">
     <div class="col mb-4" *ngFor="let movie of receivedTopRatedMovies">
       <mat-card class="card">
-        <img mat-card-image [src]="'https://image.tmdb.org/t/p/original/' + movie.poster_path" alt="Movie Poster"
-          (click)="onMovieClicked(movie.id)">
+        <img mat-card-image [src]="imgUrl + movie.poster_path" alt="Movie Poster" (click)="onMovieClicked(movie.id)">
 
         <mat-card-content>
           <h4>{{ movie.title }}</h4>

@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.css']
+  styleUrls: ['./catalog.component.css'],
 })
 export class CatalogComponent implements OnInit {
   baseUrl = environment.baseUrl;
+  imgUrl = environment.baseImgUrl;
   receivedTopRatedMovies: MovieInterface[] = [];
   showMore: boolean[] = [];
 
