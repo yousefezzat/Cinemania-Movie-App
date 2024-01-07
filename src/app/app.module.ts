@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { MovieDetailsComponent } from './Components/movie-details/movie-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './Services/movie.service';
@@ -23,7 +22,6 @@ import { RegisterComponent } from './Components/register/register.component';
     LandingComponent,
     LoginComponent,
     NavbarComponent,
-    MainLayoutComponent,
     MovieDetailsComponent,
     CatalogComponent,
     RegisterComponent
