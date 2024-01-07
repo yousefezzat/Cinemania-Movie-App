@@ -27,12 +27,6 @@ export class MovieService {
     const url = `${this.baseUrl}/movie/${movieId}?api_key=${this.apiKey}`;
     return this.httpClient.get<MovieInterface>(url);
   }
-
-  // Search movies by query
-  searchMovies(query: string): Observable<any> {
-    const url = `${this.baseUrl}/search/movie?api_key=${this.apiKey}&query=${query}`;
-    return this.httpClient.get(url);
-  }
   getMovieVideo(data: any): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}/movie/${data}/videos?api_key=${this.apiKey}`)
   }

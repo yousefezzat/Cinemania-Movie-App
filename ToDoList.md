@@ -17,7 +17,7 @@
 
 - [x] Localization (For static only)
 - [] File Structure
-- [] Search
+- [x] Search
 - [x] environments (not sure)
 - [x] environment (url path in HTML)
 - [x] Modify the Login and register pages

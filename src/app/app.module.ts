@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './Services/movie.service';
 import { LandingComponent } from './Components/landing/landing.component';
 import { LoginComponent } from './Components/login/login.component';
-import { SearchComponent } from './Components/search/search.component';
 import { CatalogComponent } from './Components/catalog/catalog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
@@ -24,7 +23,6 @@ import { RegisterComponent } from './Components/register/register.component';
     AppComponent,
     LandingComponent,
     LoginComponent,
-    SearchComponent,
     NavbarComponent,
     ScrollBackgroundDirective,
     MainLayoutComponent,
@@ -33,7 +31,7 @@ import { RegisterComponent } from './Components/register/register.component';
     RegisterComponent
   ],
   imports: [
-    
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -41,7 +39,7 @@ import { RegisterComponent } from './Components/register/register.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule
-    
+
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

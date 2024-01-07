@@ -11,7 +11,6 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./catalog.component.css'],
 })
 export class CatalogComponent implements OnInit {
-  // baseMoviesUrl = environment.baseMoviesUrl;
   imgUrl = environment.baseImgUrl;
   receivedMovies: MovieInterface[] = [];
   searchedMovies: MovieInterface[] = [];
