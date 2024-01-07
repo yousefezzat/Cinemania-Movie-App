@@ -16,16 +16,17 @@
 ## Improvements
 
 - [x] Localization (For static only)
-- [] File Structure
+- [] File Structure and Lazy Loaded Modules
 - [x] Search
 - [x] environments (not sure)
 - [x] environment (url path in HTML)
 - [x] Modify the Login and register pages
 - [x] Modify the cards apperance
 - [x] Fix scrolldown navbar background
+- [ ] Recap (code and theoretically)
+- [ ] Clean the code and Remove Comments
 - [ ] Modify Ui
 - [ ] Pagination
-- [ ] Remove Comments
 
 
 

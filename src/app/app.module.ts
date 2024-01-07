@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
-import { ScrollBackgroundDirective } from './Directives/scroll-background.directive';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
@@ -24,7 +23,6 @@ import { RegisterComponent } from './Components/register/register.component';
     LandingComponent,
     LoginComponent,
     NavbarComponent,
-    ScrollBackgroundDirective,
     MainLayoutComponent,
     MovieDetailsComponent,
     CatalogComponent,
