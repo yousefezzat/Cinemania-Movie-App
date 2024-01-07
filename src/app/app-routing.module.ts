@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { LandingComponent } from './Components/landing/landing.component';
-import { SearchComponent } from './Components/search/search.component';
 import { LoginComponent } from './Components/login/login.component';
 import { MovieDetailsComponent } from './Components/movie-details/movie-details.component';
 import { CatalogComponent } from './Components/catalog/catalog.component';
@@ -16,7 +15,6 @@ const routes: Routes = [
     children: [
       { path: '', component: LandingComponent },
       { path: 'Home', component: CatalogComponent, canActivate: [AuthGuard] },
-      { path: 'Search', component: SearchComponent, canActivate: [AuthGuard] },
       { path: 'Movie/:id', component: MovieDetailsComponent, canActivate: [AuthGuard] },
     ]
   },
