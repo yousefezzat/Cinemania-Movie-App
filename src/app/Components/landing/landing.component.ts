@@ -30,7 +30,6 @@ export class LandingComponent implements OnInit, AfterViewInit {
     this.movieService.getMovies().subscribe((movies) => {
       this.receivedMovies = movies.results;
 
-
     });
   }
 

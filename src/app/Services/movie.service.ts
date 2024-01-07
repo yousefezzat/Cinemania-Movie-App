@@ -20,6 +20,7 @@ export class MovieService {
     const url = `${this.baseMoviesUrl}${this.apiKey}`;
     return this.httpClient.get<TopRatedMoviesResponseInterface>(url);
 
+
   }
 
   // Get movie details by ID

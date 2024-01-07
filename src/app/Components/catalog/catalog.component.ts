@@ -5,6 +5,7 @@ import { MovieService } from '../../Services/movie.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
@@ -30,8 +31,6 @@ export class CatalogComponent implements OnInit {
     this.movieService.getMovies().subscribe((movies) => {
       this.receivedMovies = movies.results;
       this.showMore = new Array<boolean>(this.receivedMovies.length).fill(false);
-
-
     });
   }
 

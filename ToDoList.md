@@ -11,7 +11,7 @@
     
 - [x] Register
 - [x] Logout Logic
-- [ ] Unit tests
+- [x] Unit tests
 
 ## Improvements
 
