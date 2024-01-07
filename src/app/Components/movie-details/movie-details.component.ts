@@ -27,16 +27,13 @@ export class MovieDetailsComponent implements OnInit {
   }
 
 
-  getMovie(id: any) {
-    this.service.getMovieDetails(id).subscribe(async (result) => {
-      this.getMovieDetail = await result;
-
-
-
+  getMovie(id: number) {
+    this.service.getMovie(id).subscribe((result) => {
+      this.getMovieDetail = result;
     });
   }
 
-  getVideo(id: any) {
+  getVideo(id: number) {
     this.service.getMovieVideo(id).subscribe((result) => {
       result.results.forEach((element: any) => {
         if (element.type == "Trailer") {
@@ -47,7 +44,7 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
-  getMovieCast(id: any) {
+  getMovieCast(id: number) {
     this.service.getMovieCast(id).subscribe((result) => {
       this.getMovieCastNames = result.cast.splice(0, 9);
     });

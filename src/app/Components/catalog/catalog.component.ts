@@ -3,6 +3,7 @@ import { environment } from '../../../environments/environment';
 import { MovieInterface } from '../../../Models/movie-interface';
 import { MovieService } from '../../Services/movie.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-catalog',
@@ -12,21 +13,24 @@ import { Router } from '@angular/router';
 export class CatalogComponent implements OnInit {
   // baseMoviesUrl = environment.baseMoviesUrl;
   imgUrl = environment.baseImgUrl;
-  receivedTopRatedMovies: MovieInterface[] = [];
+  receivedMovies: MovieInterface[] = [];
+  searchedMovies: MovieInterface[] = [];
   showMore: boolean[] = [];
+  categoryTitle: string = "";
 
 
   constructor(private movieService: MovieService, private router: Router) { }
 
 
   ngOnInit() {
-    this.getTopRatedMovies();
+    this.getMovies();
+    this.detectEnv();
 
   }
-  getTopRatedMovies() {
+  getMovies() {
     this.movieService.getMovies().subscribe((movies) => {
-      this.receivedTopRatedMovies = movies.results;
-      this.showMore = new Array<boolean>(this.receivedTopRatedMovies.length).fill(false);
+      this.receivedMovies = movies.results;
+      this.showMore = new Array<boolean>(this.receivedMovies.length).fill(false);
 
 
     });
@@ -36,7 +40,7 @@ export class CatalogComponent implements OnInit {
     this.router.navigate(['Movie', id]);
   }
   truncateOverview(overview: string): string {
-    if (overview.length > 170 && !this.showMore[this.receivedTopRatedMovies.findIndex(movie => movie.overview === overview)]) {
+    if (overview.length > 170 && !this.showMore[this.receivedMovies.findIndex(movie => movie.overview === overview)]) {
       return overview.slice(0, 170) + '...';
     }
     return overview;
@@ -48,6 +52,27 @@ export class CatalogComponent implements OnInit {
   }
 
   getIndex(movie: MovieInterface): number {
-    return this.receivedTopRatedMovies.findIndex(m => m === movie);
+    return this.receivedMovies.findIndex(m => m === movie);
+  }
+  handleSearch(form: NgForm): void {
+    const searchQuery = form.value.searchQuery.toLowerCase().trim();
+
+    if (form.valid) {
+      if (searchQuery !== '') {
+        this.receivedMovies = this.receivedMovies.filter(movie =>
+          movie.title.toLowerCase().includes(searchQuery)
+        );
+      } else {
+        this.getMovies();
+      }
+    }
+  }
+  detectEnv() {
+    if (environment.baseMoviesUrl == "https://api.themoviedb.org/3/movie/top_rated?api_key=") {
+      this.categoryTitle = "Top Rated Movies";
+    }
+    else {
+      this.categoryTitle = "Most Popular Movies";
+    }
   }
 }
