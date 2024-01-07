@@ -33,8 +33,8 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "localize": [
-              "ar-AE",
-              "en-US"
+              "en-US",
+              "ar-AE"
             ],
             "outputPath": "dist/cinemania",
             "index": "src/index.html",
