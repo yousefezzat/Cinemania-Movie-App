@@ -15,9 +15,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(`Before Status: IsloggedIn: ${this.IsloggedIn}`);
     this.getStatus();
-    console.log(`After Status: IsloggedIn: ${this.IsloggedIn}`);
 
   }
   getStatus() {
@@ -26,8 +24,6 @@ export class NavbarComponent implements OnInit {
   }
   handleLogout() {
     this.userService.logout();
-    this.getStatus();
-    console.log(`Handle Logout, ${this.IsloggedIn}`);
     return true;
   }
 
