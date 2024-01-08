@@ -16,12 +16,12 @@
           <a class="nav-link" routerLinkActive="active" routerLink="/Search">Search</a>
         </li> -->
         <ng-container>
-          <div *ngIf="!IsloggedIn">
+          <div *ngIf="!getStatus()">
             <li class="nav-item">
               <a class="nav-link" routerLinkActive="active" routerLink="/Login">Login</a>
             </li>
           </div>
-          <div *ngIf="IsloggedIn">
+          <div *ngIf="getStatus()">
             <li class="nav-item">
               <a class="nav-link" routerLinkActive="active" routerLink="/" (click)="handleLogout()">Logout</a>
             </li>

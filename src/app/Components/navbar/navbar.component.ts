@@ -9,23 +9,25 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  IsloggedIn: boolean = false;
+  IsloggedIn: boolean = this.userService.isLogged();
   constructor(private userService: UserService, private router: Router) {
 
   }
 
   ngOnInit() {
+    console.log(`Before Status: IsloggedIn: ${this.IsloggedIn}`);
     this.getStatus();
+    console.log(`After Status: IsloggedIn: ${this.IsloggedIn}`);
 
   }
   getStatus() {
-    this.userService.isLoggedInSubject.subscribe((status) => {
-      this.IsloggedIn = status;
-      console.log(this.IsloggedIn);
-    })
+    this.IsloggedIn = this.userService.isLogged();
+    return this.IsloggedIn;
   }
   handleLogout() {
     this.userService.logout();
+    this.getStatus();
+    console.log(`Handle Logout, ${this.IsloggedIn}`);
     return true;
   }
 
